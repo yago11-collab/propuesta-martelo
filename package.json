@@ -1,0 +1,20 @@
+{
+  "name": "martelo-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo de web para Talleres Mecánicos Martelo (propuesta, no oficial)",
+  "scripts": {
+    "build": "npm run fonts && tailwindcss -i src/input.css -o public/css/styles.css --minify",
+    "dev": "tailwindcss -i src/input.css -o public/css/styles.css --watch",
+    "serve": "python -m http.server 8080 --directory public",
+    "og": "node scripts/og.mjs",
+    "capturas": "node scripts/capturas.mjs",
+    "fonts": "node -e \"const fs=require('fs');for(const [pk,f] of [['archivo','archivo-latin-600-normal'],['archivo','archivo-latin-800-normal'],['archivo','archivo-latin-800-italic'],['source-sans-3','source-sans-3-latin-400-normal'],['source-sans-3','source-sans-3-latin-600-normal']])fs.copyFileSync('node_modules/@fontsource/'+pk+'/files/'+f+'.woff2','public/fonts/'+f+'.woff2')\""
+  },
+  "devDependencies": {
+    "@fontsource/archivo": "^5.2.6",
+    "@fontsource/source-sans-3": "^5.2.8",
+    "playwright": "1.55.0",
+    "tailwindcss": "3.4.17"
+  }
+}

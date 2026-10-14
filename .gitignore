@@ -1,0 +1,5 @@
+node_modules/
+# Documentos internos de venta: NO se suben al repositorio público
+pitch.md
+identidad-visual-martelo.md
+.claude/
