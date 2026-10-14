@@ -1,0 +1,5 @@
+# DEMO: la página principal lleva <meta name="robots" content="noindex, nofollow">.
+# Al publicar la web oficial, quita ese meta y añade aquí el sitemap:
+# Sitemap: https://[CONFIRMAR-DOMINIO]/sitemap.xml
+User-agent: *
+Allow: /

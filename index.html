@@ -1,0 +1,539 @@
+<!doctype html>
+<!--
+  ============================================================================
+  DEMO · Talleres Mecánicos Martelo
+  Propuesta de diseño NO OFICIAL. Para pasarla a producción:
+    1) Quita la clase "is-demo" de <html> (banda superior y avisos de demo).
+    2) Elimina la etiqueta <meta name="robots" content="noindex, nofollow">.
+    3) Revisa todos los marcadores [CONFIRMAR] (lista completa en README.md).
+  ============================================================================
+-->
+<html lang="es" class="is-demo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('js')</script>
+
+  <!-- DEMO: impedir indexación. ELIMINAR al publicar la web oficial. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Taller mecánico en A Coruña · Talleres Mecánicos Martelo</title>
+  <meta name="description" content="Taller mecánico de confianza en Rúa San Rosendo, 27 (A Coruña). 4,8 ★ en Google con 164 reseñas. Llama al 981 23 65 98 o pide cita y presupuesto.">
+  <meta name="theme-color" content="#1F4E9E">
+  <!-- [CONFIRMAR: dominio] Cuando exista, añadir: <link rel="canonical" href="https://DOMINIO/"> -->
+
+  <!-- Open Graph (imagen provisional). [CONFIRMAR: dominio] para usar URLs absolutas en og:url y og:image -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Talleres Mecánicos Martelo">
+  <meta property="og:title" content="Talleres Mecánicos Martelo · Taller de confianza en A Coruña">
+  <meta property="og:description" content="Taller mecánico en Rúa San Rosendo, 27 (A Coruña). 4,8 ★ en Google con 164 reseñas.">
+  <meta property="og:image" content="img/og-placeholder.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografías (Google Fonts, autoalojadas en /fonts con font-display: swap):
+       Archivo para titulares y Source Sans 3 para texto. Se precargan las dos que pinta el hero. -->
+  <link rel="preload" href="fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+
+  <!-- SEO local. [CONFIRMAR: dominio] y añadir "url" e "image" con URLs absolutas al publicar. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Talleres Mecánicos Martelo",
+    "telephone": "+34 981 23 65 98",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rúa San Rosendo, 27",
+      "postalCode": "15007",
+      "addressLocality": "A Coruña",
+      "addressRegion": "A Coruña",
+      "addressCountry": "ES"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 43.3529812, "longitude": -8.4128773 },
+    "hasMap": "https://www.google.com/maps/place/Talleres+Mec%C3%A1nicos+Martelo/@43.3529812,-8.4128773,17z/data=!4m6!3m5!1s0xd2e7c913ab3c3b7:0x381ffc83fd62094f!8m2!3d43.3529812!4d-8.4128773!16s%2Fg%2F1z44c7m9z",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:30", "closes": "13:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "15:30", "closes": "19:30" }
+    ],
+    "areaServed": { "@type": "City", "name": "A Coruña" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "bestRating": "5", "reviewCount": "164" }
+  }
+  </script>
+</head>
+<body>
+  <!-- Sprite de iconos de línea (se reutilizan con <use href="#i-...">) -->
+  <svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-nav" viewBox="0 0 24 24"><path d="M3 11 22 2l-9 19-2-8-8-2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 3c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+    <symbol id="i-disc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M5.6 6.4A9 9 0 0 1 9 3.5"/></symbol>
+    <symbol id="i-tyre" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="5"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+    <symbol id="i-spring" viewBox="0 0 24 24"><path d="M12 2v3M12 19v3M7 5h10M7 19h10M8 8l8 2.2-8 2.2 8 2.2-8 2.2"/></symbol>
+    <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="12" rx="2"/><path d="M22 11v4M11.5 9.5 9.5 13h4l-2 3.5"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M3.3 7l17.4 10M20.7 7 3.3 17M9 4l3 2 3-2M9 20l3-2 3 2"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.76-2.02-2-2H4c-1.25 0-2 .75-2 1.97V11c0 1.25.75 2 2 2h1c0 1-1 4-2 4zM14 21c3 0 7-1 7-8V5c0-1.25-.76-2.02-2-2h-4c-1.25 0-2 .75-2 1.97V11c0 1.25.75 2 2 2h1c0 1-1 4-2 4z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="i-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></symbol>
+  </svg>
+
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:font-semibold focus:text-marino">Saltar al contenido</a>
+
+  <!-- ============ BANDA DEMO (desaparece al quitar .is-demo de <html>) ============ -->
+  <div class="demo-band demo-only demo-flex" role="note">
+    <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-amarillo"></span>
+    Propuesta de diseño para Talleres Mecánicos Martelo · Demo
+  </div>
+
+  <!-- ============ CABECERA FIJA ============ -->
+  <header class="site-header">
+    <div class="contenedor flex h-full items-center justify-between gap-4 px-4 sm:px-6">
+      <a href="#inicio" class="flex items-center rounded" aria-label="Talleres Mecánicos Martelo, ir al inicio">
+        <!-- PROPUESTA DE LOGOTIPO tipográfico: NO es el logotipo oficial del taller.
+             Inspirado en el juego recta/cursiva del rótulo de la fachada, con otra tipografía. -->
+        <svg class="h-9 w-auto md:h-10" viewBox="0 0 160 42" aria-hidden="true" focusable="false">
+          <text x="1" y="12" textLength="156" lengthAdjust="spacingAndGlyphs" font-family="Archivo, Arial, sans-serif" font-weight="600" font-size="11" fill="currentColor" opacity=".9">TALLERES MECÁNICOS</text>
+          <text x="0" y="39" textLength="158" lengthAdjust="spacingAndGlyphs" font-family="Archivo, Arial, sans-serif" font-weight="800" font-style="italic" font-size="29" fill="currentColor">MARTELO</text>
+        </svg>
+      </a>
+      <nav aria-label="Principal" class="hidden lg:block">
+        <ul class="flex items-center gap-7 font-display text-[15px] font-semibold text-white/90">
+          <li><a class="hover:text-white hover:underline underline-offset-4" href="#por-que">Por qué nosotros</a></li>
+          <li><a class="hover:text-white hover:underline underline-offset-4" href="#servicios">Servicios</a></li>
+          <li><a class="hover:text-white hover:underline underline-offset-4" href="#opiniones">Opiniones</a></li>
+          <li><a class="hover:text-white hover:underline underline-offset-4" href="#horario">Horario</a></li>
+          <li><a class="hover:text-white hover:underline underline-offset-4" href="#cita">Pedir cita</a></li>
+        </ul>
+      </nav>
+      <a href="tel:+34981236598" class="btn-cta min-h-[44px] px-4 text-[15px]">
+        <svg class="icono h-5 w-5" aria-hidden="true"><use href="#i-phone"/></svg>
+        <span>Llamar</span>
+        <span class="hidden md:inline font-normal opacity-90">981 23 65 98</span>
+      </a>
+    </div>
+    <div class="franja" aria-hidden="true"></div>
+  </header>
+
+  <main id="contenido">
+    <!-- ============ HERO ============ -->
+    <section id="inicio" class="px-4 pb-16 pt-10 sm:px-6 md:pb-24 md:pt-16" aria-labelledby="titular">
+      <div class="contenedor grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr] md:gap-14">
+        <div>
+          <p class="eyebrow flex items-center gap-2">
+            <svg class="icono h-4 w-4" aria-hidden="true"><use href="#i-pin"/></svg>
+            Taller mecánico en Rúa San Rosendo, A Coruña
+          </p>
+          <!-- Titular elegido de entre 3 opciones (ver README.md) -->
+          <h1 id="titular" class="mt-4 text-[2.5rem] font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+            El taller de confianza <span class="italic text-azul">del barrio</span>
+          </h1>
+          <p class="mt-5 max-w-xl text-lg leading-relaxed text-suave sm:text-xl">
+            Confianza, honestidad y buen precio: es lo que más repiten quienes ya han pasado por nuestro taller.
+          </p>
+
+          <!-- Sello de valoración (dato verificado en Google Maps el 14/10/2026) -->
+          <a href="https://www.google.com/maps/place/Talleres+Mec%C3%A1nicos+Martelo/@43.3529812,-8.4128773,17z/data=!4m6!3m5!1s0xd2e7c913ab3c3b7:0x381ffc83fd62094f!8m2!3d43.3529812!4d-8.4128773!16s%2Fg%2F1z44c7m9z"
+             class="mt-7 inline-flex items-center gap-3 rounded-full border border-linea bg-white py-2 pl-3 pr-4 shadow-sm transition hover:border-azul/40"
+             target="_blank" rel="noopener">
+            <span class="flex text-amarillo [&_svg]:fill-current [&_svg]:stroke-[#A88400] [&_svg]:stroke-1" aria-hidden="true">
+              <svg class="h-4 w-4 sm:h-5 sm:w-5"><use href="#i-star"/></svg><svg class="h-4 w-4 sm:h-5 sm:w-5"><use href="#i-star"/></svg><svg class="h-4 w-4 sm:h-5 sm:w-5"><use href="#i-star"/></svg><svg class="h-4 w-4 sm:h-5 sm:w-5"><use href="#i-star"/></svg><svg class="h-4 w-4 sm:h-5 sm:w-5"><use href="#i-star"/></svg>
+            </span>
+            <span class="whitespace-nowrap font-display text-[15px] font-semibold text-marino sm:text-base">4,8 <span aria-hidden="true">★</span><span class="sr-only">sobre 5</span> en Google <span class="text-suave">· 164 reseñas</span></span>
+          </a>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="tel:+34981236598" class="btn-cta px-7 text-lg">
+              <svg class="icono h-5 w-5" aria-hidden="true"><use href="#i-phone"/></svg> Llamar ahora
+            </a>
+            <a href="#cita" class="btn-sec px-7 text-lg">
+              <svg class="icono h-5 w-5" aria-hidden="true"><use href="#i-cal"/></svg> Pedir cita
+            </a>
+          </div>
+
+          <p class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-suave">
+            <span class="estado" data-status data-state="loading">Consultando horario…</span>
+            <span>Lunes a viernes · 9:30–13:30 y 15:30–19:30</span>
+          </p>
+          <!-- [CONFIRMAR: año de fundación] En 2018 había en la fachada una placa "Aniversario 50".
+               Si el dueño lo confirma, añadir aquí un sello tipo: "Desde 19__ en San Rosendo". -->
+        </div>
+
+        <!-- [FOTO DEL TALLER] Sustituir por <img> real (fachada de día). Recomendado 960×720, WebP, con width/height. -->
+        <figure class="reveal">
+          <div class="foto-placeholder aspect-[4/3] w-full shadow-xl shadow-marino/20">
+            <svg class="icono h-14 w-14 opacity-90" aria-hidden="true"><use href="#i-wrench"/></svg>
+            <span class="font-display text-lg font-semibold tracking-wide">[FOTO DEL TALLER]</span>
+            <span class="text-sm text-white/75">Fachada · Rúa San Rosendo, 27</span>
+            <div class="franja absolute inset-x-0 bottom-0" aria-hidden="true"></div>
+          </div>
+          <figcaption class="sr-only">Espacio reservado para una fotografía del taller</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ POR QUÉ NOSOTROS ============ -->
+    <section id="por-que" class="seccion bg-white" aria-labelledby="por-que-t">
+      <div class="contenedor">
+        <div class="max-w-2xl">
+          <p class="eyebrow">Por qué nosotros</p>
+          <h2 id="por-que-t" class="mt-3 text-3xl font-extrabold sm:text-4xl">Lo que dicen de nosotros quienes nos conocen</h2>
+          <p class="mt-4 text-lg text-suave">Temas que más se repiten en nuestras reseñas de Google:</p>
+          <ul class="mt-4 flex flex-wrap gap-2 text-sm font-semibold" aria-label="Menciones en las reseñas de Google">
+            <li class="rounded-full bg-azul-50 px-3 py-1 text-azul-800">confianza · 19</li>
+            <li class="rounded-full bg-azul-50 px-3 py-1 text-azul-800">precio · 18</li>
+            <li class="rounded-full bg-azul-50 px-3 py-1 text-azul-800">honestidad · 10</li>
+            <li class="rounded-full bg-fondo px-3 py-1 text-suave">rapidez · 3</li>
+            <li class="rounded-full bg-fondo px-3 py-1 text-suave">precios competitivos · 2</li>
+            <li class="rounded-full bg-fondo px-3 py-1 text-suave">trato familiar · 2</li>
+          </ul>
+        </div>
+
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="tarjeta reveal">
+            <span class="grid h-12 w-12 place-items-center rounded-lg bg-azul-50 text-azul"><svg class="icono" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3 class="mt-5 text-xl font-extrabold">Honradez</h3>
+            <p class="mt-2 leading-relaxed text-suave">Confianza y honestidad son lo que más mencionan nuestros clientes en Google.</p>
+          </article>
+          <article class="tarjeta reveal">
+            <span class="grid h-12 w-12 place-items-center rounded-lg bg-azul-50 text-azul"><svg class="icono" aria-hidden="true"><use href="#i-tag"/></svg></span>
+            <h3 class="mt-5 text-xl font-extrabold">Precio justo</h3>
+            <p class="mt-2 leading-relaxed text-suave">El precio es otro de los temas que más salen en las opiniones de quienes ya han venido.</p>
+          </article>
+          <article class="tarjeta reveal">
+            <span class="grid h-12 w-12 place-items-center rounded-lg bg-azul-50 text-azul"><svg class="icono" aria-hidden="true"><use href="#i-users"/></svg></span>
+            <h3 class="mt-5 text-xl font-extrabold">Trato cercano</h3>
+            <p class="mt-2 leading-relaxed text-suave">«Son muy simpáticos», «buenísima atención»: así describen nuestros clientes el trato.</p>
+          </article>
+          <article class="tarjeta reveal">
+            <span class="grid h-12 w-12 place-items-center rounded-lg bg-azul-50 text-azul"><svg class="icono" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <h3 class="mt-5 text-xl font-extrabold">Seriedad y puntualidad</h3>
+            <p class="mt-2 leading-relaxed text-suave">«Serios, puntuales, atentos», escribe un cliente. La rapidez también aparece en las reseñas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <!-- CONFIRMAR CON EL CLIENTE: lista genérica de mecánica general. Ningún servicio está verificado. -->
+    <section id="servicios" class="seccion" aria-labelledby="servicios-t">
+      <div class="contenedor">
+        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Servicios</p>
+            <h2 id="servicios-t" class="mt-3 text-3xl font-extrabold sm:text-4xl">Mecánica general para tu coche</h2>
+            <p class="mt-4 text-lg text-suave">¿No ves lo que necesitas? Llámanos y te decimos si podemos ayudarte.</p>
+          </div>
+          <p class="aviso-confirmar demo-only demo-flex self-start md:self-auto" role="note">
+            <svg class="icono h-4 w-4" aria-hidden="true"><use href="#i-alert"/></svg>
+            Demo: servicios orientativos, pendientes de confirmar con el taller
+          </p>
+        </div>
+
+        <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <li class="tarjeta reveal flex gap-4"><svg class="icono mt-0.5 text-azul" aria-hidden="true"><use href="#i-drop"/></svg><div><h3 class="text-lg font-extrabold">Mantenimiento y revisiones</h3><p class="mt-1 text-suave">Aceite, filtros y revisiones periódicas.</p></div></li>
+          <li class="tarjeta reveal flex gap-4"><svg class="icono mt-0.5 text-azul" aria-hidden="true"><use href="#i-gauge"/></svg><div><h3 class="text-lg font-extrabold">Diagnosis</h3><p class="mt-1 text-suave">Averías y testigos encendidos en el cuadro.</p></div></li>
+          <li class="tarjeta reveal flex gap-4"><svg class="icono mt-0.5 text-azul" aria-hidden="true"><use href="#i-disc"/></svg><div><h3 class="text-lg font-extrabold">Frenos</h3><p class="mt-1 text-suave">Pastillas, discos y líquido de frenos.</p></div></li>
+          <li class="tarjeta reveal flex gap-4"><svg class="icono mt-0.5 text-azul" aria-hidden="true"><use href="#i-tyre"/></svg><div><h3 class="text-lg font-extrabold">Neumáticos</h3><p class="mt-1 text-suave">Cambio y revisión de neumáticos.</p></div></li>
+          <li class="tarjeta reveal flex gap-4"><svg class="icono mt-0.5 text-azul" aria-hidden="true"><use href="#i-check"/></svg><div><h3 class="text-lg font-extrabold">Pre-ITV</h3><p class="mt-1 text-suave">Revisión del coche antes de pasar la ITV.</p></div></li>
+          <li class="tarjeta reveal flex gap-4"><svg class="icono mt-0.5 text-azul" aria-hidden="true"><use href="#i-spring"/></svg><div><h3 class="text-lg font-extrabold">Suspensión y dirección</h3><p class="mt-1 text-suave">Amortiguadores, rótulas y holguras.</p></div></li>
+          <li class="tarjeta reveal flex gap-4"><svg class="icono mt-0.5 text-azul" aria-hidden="true"><use href="#i-battery"/></svg><div><h3 class="text-lg font-extrabold">Batería y electricidad</h3><p class="mt-1 text-suave">Batería, arranque y carga.</p></div></li>
+          <li class="tarjeta reveal flex gap-4"><svg class="icono mt-0.5 text-azul" aria-hidden="true"><use href="#i-snow"/></svg><div><h3 class="text-lg font-extrabold">Aire acondicionado</h3><p class="mt-1 text-suave">Revisión del aire acondicionado.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ RESEÑAS (solo las 3 reales que muestra Google) ============ -->
+    <section id="opiniones" class="relative bg-azul text-white" aria-labelledby="opiniones-t">
+      <div class="seccion">
+        <div class="contenedor">
+          <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+            <div>
+              <p class="font-display text-sm font-semibold uppercase tracking-[0.14em] text-amarillo">Opiniones</p>
+              <h2 id="opiniones-t" class="mt-3 text-3xl font-extrabold text-white sm:text-4xl">Lo que dicen nuestros clientes</h2>
+              <div class="mt-8 flex items-center gap-5">
+                <p class="font-display text-7xl font-extrabold leading-none">4,8</p>
+                <div>
+                  <div class="flex text-amarillo [&_svg]:fill-current" aria-hidden="true">
+                    <svg class="h-6 w-6"><use href="#i-star"/></svg><svg class="h-6 w-6"><use href="#i-star"/></svg><svg class="h-6 w-6"><use href="#i-star"/></svg><svg class="h-6 w-6"><use href="#i-star"/></svg><svg class="h-6 w-6"><use href="#i-star"/></svg>
+                  </div>
+                  <p class="mt-1 text-white/85"><span class="sr-only">4,8 sobre 5 · </span>164 reseñas en Google</p>
+                </div>
+              </div>
+              <a class="btn-claro mt-8" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/place/Talleres+Mec%C3%A1nicos+Martelo/@43.3529812,-8.4128773,17z/data=!4m6!3m5!1s0xd2e7c913ab3c3b7:0x381ffc83fd62094f!8m2!3d43.3529812!4d-8.4128773!16s%2Fg%2F1z44c7m9z">
+                Ver todas las reseñas en Google
+                <svg class="icono h-4 w-4" aria-hidden="true"><use href="#i-ext"/></svg>
+                <span class="sr-only">(se abre en una pestaña nueva)</span>
+              </a>
+            </div>
+
+            <ul class="grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              <li class="reveal">
+                <figure class="flex h-full flex-col rounded-xl bg-white p-6 text-texto shadow-lg shadow-marino/30">
+                  <svg class="h-7 w-7 fill-azul/15 stroke-azul" aria-hidden="true"><use href="#i-quote"/></svg>
+                  <blockquote class="mt-3 flex-1 font-display text-lg font-semibold leading-snug text-marino">“Honradez y profesionalidad, son muy simpáticos”</blockquote>
+                  <figcaption class="mt-4 text-sm text-suave">— Cliente en Google</figcaption>
+                </figure>
+              </li>
+              <li class="reveal">
+                <figure class="flex h-full flex-col rounded-xl bg-white p-6 text-texto shadow-lg shadow-marino/30">
+                  <svg class="h-7 w-7 fill-azul/15 stroke-azul" aria-hidden="true"><use href="#i-quote"/></svg>
+                  <blockquote class="mt-3 flex-1 font-display text-lg font-semibold leading-snug text-marino">“Buenísima atención y grandes profesionales!!”</blockquote>
+                  <figcaption class="mt-4 text-sm text-suave">— Cliente en Google</figcaption>
+                </figure>
+              </li>
+              <li class="reveal">
+                <figure class="flex h-full flex-col rounded-xl bg-white p-6 text-texto shadow-lg shadow-marino/30">
+                  <svg class="h-7 w-7 fill-azul/15 stroke-azul" aria-hidden="true"><use href="#i-quote"/></svg>
+                  <blockquote class="mt-3 flex-1 font-display text-lg font-semibold leading-snug text-marino">“Serios, puntuales, atentos.”</blockquote>
+                  <figcaption class="mt-4 text-sm text-suave">— Cliente en Google</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="franja" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ CÓMO FUNCIONA ============ -->
+    <!-- CONFIRMAR CON EL CLIENTE: texto del proceso a validar con el taller. -->
+    <section id="como-funciona" class="seccion bg-white" aria-labelledby="como-t">
+      <div class="contenedor">
+        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Cómo funciona</p>
+            <h2 id="como-t" class="mt-3 text-3xl font-extrabold sm:text-4xl">Así de sencillo</h2>
+          </div>
+          <p class="aviso-confirmar demo-only demo-flex self-start md:self-auto" role="note">
+            <svg class="icono h-4 w-4" aria-hidden="true"><use href="#i-alert"/></svg>
+            Demo: texto a validar con el taller
+          </p>
+        </div>
+        <ol class="mt-12 grid gap-8 md:grid-cols-3 md:gap-6">
+          <li class="reveal relative">
+            <span class="font-display text-5xl font-extrabold italic text-azul/20" aria-hidden="true">01</span>
+            <h3 class="mt-2 text-xl font-extrabold">Llamas o pides cita</h3>
+            <p class="mt-2 leading-relaxed text-suave">Cuéntanos qué le pasa al coche por teléfono o con el formulario.</p>
+          </li>
+          <li class="reveal relative">
+            <span class="font-display text-5xl font-extrabold italic text-azul/20" aria-hidden="true">02</span>
+            <h3 class="mt-2 text-xl font-extrabold">Revisamos y te damos presupuesto</h3>
+            <p class="mt-2 leading-relaxed text-suave">Miramos el coche y te explicamos qué hay que hacer y cuánto cuesta.</p>
+          </li>
+          <li class="reveal relative">
+            <span class="font-display text-5xl font-extrabold italic text-azul/20" aria-hidden="true">03</span>
+            <h3 class="mt-2 text-xl font-extrabold">Reparamos y te avisamos</h3>
+            <p class="mt-2 leading-relaxed text-suave">Cuando el coche está listo, te llamamos para que pases a recogerlo.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PEDIR CITA / PRESUPUESTO ============ -->
+    <section id="cita" class="seccion" aria-labelledby="cita-t">
+      <div class="contenedor grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <div>
+          <p class="eyebrow">Pedir cita</p>
+          <h2 id="cita-t" class="mt-3 text-3xl font-extrabold sm:text-4xl">Pide cita o presupuesto</h2>
+          <p class="mt-4 text-lg leading-relaxed text-suave">Déjanos tus datos y qué le pasa al coche. Te contactaremos para confirmar día y hora.</p>
+          <div class="mt-8 rounded-xl border border-linea bg-white p-6">
+            <p class="font-display font-semibold text-marino">¿Prefieres llamar?</p>
+            <a href="tel:+34981236598" class="mt-2 inline-flex items-center gap-2 font-display text-2xl font-extrabold text-azul hover:underline">
+              <svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg> 981 23 65 98
+            </a>
+            <p class="mt-2 text-sm text-suave">Lunes a viernes · 9:30–13:30 y 15:30–19:30</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-linea bg-white p-6 shadow-sm sm:p-8">
+          <form id="form-cita" novalidate aria-describedby="form-nota">
+            <p id="form-resumen" class="mb-5 hidden rounded-lg bg-red-50 p-4 font-semibold text-rojo-700" role="alert" tabindex="-1"></p>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text" autocomplete="name" required minlength="2" aria-describedby="nombre-error">
+                <p id="nombre-error" class="error" hidden></p>
+              </div>
+              <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="telefono-error">
+                <p id="telefono-error" class="error" hidden></p>
+              </div>
+              <div class="campo sm:col-span-2">
+                <label for="vehiculo">Matrícula o modelo del coche</label>
+                <input id="vehiculo" name="vehiculo" type="text" required placeholder="Ej.: 1234 ABC o Seat Ibiza" aria-describedby="vehiculo-error">
+                <p id="vehiculo-error" class="error" hidden></p>
+              </div>
+              <div class="campo sm:col-span-2">
+                <label for="averia">¿Qué le pasa al coche?</label>
+                <textarea id="averia" name="averia" rows="4" required minlength="5" aria-describedby="averia-error"></textarea>
+                <p id="averia-error" class="error" hidden></p>
+              </div>
+              <div class="campo sm:col-span-2">
+                <label for="franja">Franja horaria preferida</label>
+                <select id="franja" name="franja" required aria-describedby="franja-error">
+                  <option value="">Elige una opción</option>
+                  <option>Mañana (9:30–13:30)</option>
+                  <option>Tarde (15:30–19:30)</option>
+                  <option>Me da igual</option>
+                </select>
+                <p id="franja-error" class="error" hidden></p>
+              </div>
+            </div>
+
+            <!-- Antispam para Formspree: campo invisible que las personas no rellenan -->
+            <div class="hidden" aria-hidden="true">
+              <label for="_gotcha">No rellenar</label>
+              <input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="campo mt-5">
+              <div class="flex items-start gap-3">
+                <input id="privacidad" name="privacidad" type="checkbox" required class="mt-1 h-5 w-5 shrink-0 accent-azul" aria-describedby="privacidad-error">
+                <label for="privacidad" class="!mb-0 !font-normal text-texto">He leído y acepto la <a href="privacidad.html" class="font-semibold text-azul underline">política de privacidad</a>.</label>
+              </div>
+              <p id="privacidad-error" class="error" hidden></p>
+            </div>
+
+            <button type="submit" class="btn-cta mt-6 w-full text-lg sm:w-auto sm:px-8">
+              <svg class="icono h-5 w-5" aria-hidden="true"><use href="#i-cal"/></svg>
+              Enviar solicitud
+            </button>
+            <p id="form-nota" class="mt-4 text-sm text-suave">Usaremos tus datos solo para responder a tu solicitud.</p>
+          </form>
+
+          <div id="form-ok" class="hidden text-center" role="status" tabindex="-1">
+            <svg class="icono mx-auto h-14 w-14 text-emerald-700" aria-hidden="true"><use href="#i-ok"/></svg>
+            <p class="mt-4 font-display text-2xl font-extrabold text-marino">¡Gracias! Solicitud preparada</p>
+            <p id="form-ok-texto" class="mx-auto mt-2 max-w-md text-suave"></p>
+            <p class="demo-only mx-auto mt-3 max-w-md text-sm text-amber-900">Demo: el envío real se configurará con el taller (Formspree o email).</p>
+            <button type="button" id="form-otra" class="btn-sec mt-6">Enviar otra solicitud</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HORARIO Y UBICACIÓN ============ -->
+    <section id="horario" class="seccion bg-white" aria-labelledby="horario-t">
+      <div class="contenedor grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <p class="eyebrow">Horario y ubicación</p>
+          <h2 id="horario-t" class="mt-3 text-3xl font-extrabold sm:text-4xl">Ven a vernos a San Rosendo</h2>
+          <p class="mt-5"><span class="estado text-base" data-status data-state="loading">Consultando horario…</span></p>
+
+          <table class="horario mt-6 w-full max-w-md overflow-hidden rounded-xl border border-linea text-left">
+            <caption class="sr-only">Horario de apertura</caption>
+            <tbody class="divide-y divide-linea">
+              <tr data-day="1"><th scope="row" class="px-4 py-3 font-semibold text-marino">Lunes</th><td class="px-4 py-3">9:30–13:30 · 15:30–19:30</td></tr>
+              <tr data-day="2"><th scope="row" class="px-4 py-3 font-semibold text-marino">Martes</th><td class="px-4 py-3">9:30–13:30 · 15:30–19:30</td></tr>
+              <tr data-day="3"><th scope="row" class="px-4 py-3 font-semibold text-marino">Miércoles</th><td class="px-4 py-3">9:30–13:30 · 15:30–19:30</td></tr>
+              <tr data-day="4"><th scope="row" class="px-4 py-3 font-semibold text-marino">Jueves</th><td class="px-4 py-3">9:30–13:30 · 15:30–19:30</td></tr>
+              <tr data-day="5"><th scope="row" class="px-4 py-3 font-semibold text-marino">Viernes</th><td class="px-4 py-3">9:30–13:30 · 15:30–19:30</td></tr>
+              <tr data-day="6"><th scope="row" class="px-4 py-3 font-semibold text-marino">Sábado</th><td class="px-4 py-3 text-suave">Cerrado</td></tr>
+              <tr data-day="7"><th scope="row" class="px-4 py-3 font-semibold text-marino">Domingo</th><td class="px-4 py-3 text-suave">Cerrado</td></tr>
+            </tbody>
+          </table>
+          <!-- [CONFIRMAR: horario en festivos y agosto] El indicador no tiene en cuenta festivos. -->
+
+          <address class="mt-8 not-italic">
+            <p class="flex items-start gap-3 text-lg"><svg class="icono mt-0.5 text-azul" aria-hidden="true"><use href="#i-pin"/></svg><span>Rúa San Rosendo, 27<br>15007 A Coruña</span></p>
+            <p class="mt-3 flex items-center gap-3 text-lg"><svg class="icono text-azul" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+34981236598" class="font-semibold text-azul hover:underline">981 23 65 98</a></p>
+          </address>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a class="btn-cta" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=Talleres+Mec%C3%A1nicos+Martelo%2C+R%C3%BAa+San+Rosendo+27%2C+15007+A+Coru%C3%B1a">
+              <svg class="icono h-5 w-5" aria-hidden="true"><use href="#i-nav"/></svg> Cómo llegar
+            </a>
+            <a class="btn-sec" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Talleres+Mec%C3%A1nicos+Martelo/@43.3529812,-8.4128773,17z/data=!4m6!3m5!1s0xd2e7c913ab3c3b7:0x381ffc83fd62094f!8m2!3d43.3529812!4d-8.4128773!16s%2Fg%2F1z44c7m9z">
+              Abrir en Google Maps <svg class="icono h-4 w-4" aria-hidden="true"><use href="#i-ext"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mapa bajo demanda: el iframe de Google solo se carga al pulsar el botón -->
+        <div id="mapa" class="relative min-h-[320px] overflow-hidden rounded-2xl border border-linea bg-azul-50 lg:min-h-full">
+          <svg class="absolute inset-0 h-full w-full text-azul/10" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 400 400">
+            <g fill="none" stroke="currentColor" stroke-width="10">
+              <path d="M-20 120 L420 60"/><path d="M-20 300 L420 230"/><path d="M90 -20 L150 420"/><path d="M280 -20 L320 420"/>
+            </g>
+            <g fill="none" stroke="currentColor" stroke-width="4"><path d="M-20 200 L420 150"/><path d="M200 -20 L230 420"/></g>
+          </svg>
+          <div class="relative flex h-full min-h-[320px] flex-col items-center justify-center gap-4 p-8 text-center">
+            <span class="grid h-14 w-14 place-items-center rounded-full bg-rojo text-white shadow-lg"><svg class="icono h-7 w-7" aria-hidden="true"><use href="#i-pin"/></svg></span>
+            <p class="font-display text-lg font-extrabold text-marino">Rúa San Rosendo, 27</p>
+            <button type="button" id="cargar-mapa" class="btn-sec">Ver mapa aquí</button>
+            <p class="max-w-xs text-xs text-suave">Al cargar el mapa se conectará con Google Maps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ PIE ============ -->
+  <footer class="bg-marino text-white/85">
+    <div class="franja" aria-hidden="true"></div>
+    <div class="contenedor grid gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
+      <div>
+        <!-- PROPUESTA DE LOGOTIPO (no oficial) -->
+        <svg class="h-10 w-auto text-white" viewBox="0 0 160 42" role="img" aria-label="Talleres Mecánicos Martelo">
+          <text x="1" y="12" textLength="156" lengthAdjust="spacingAndGlyphs" font-family="Archivo, Arial, sans-serif" font-weight="600" font-size="11" fill="currentColor" opacity=".9">TALLERES MECÁNICOS</text>
+          <text x="0" y="39" textLength="158" lengthAdjust="spacingAndGlyphs" font-family="Archivo, Arial, sans-serif" font-weight="800" font-style="italic" font-size="29" fill="currentColor">MARTELO</text>
+        </svg>
+        <p class="mt-4 max-w-xs text-white/75">Taller mecánico de confianza en Coruña, en la Rúa San Rosendo.</p>
+      </div>
+      <div>
+        <h2 class="font-display text-base font-semibold uppercase tracking-[0.14em] text-amarillo">Contacto</h2>
+        <address class="mt-4 space-y-2 not-italic">
+          <p>Rúa San Rosendo, 27 · 15007 A Coruña</p>
+          <p><a href="tel:+34981236598" class="font-semibold text-white hover:underline">981 23 65 98</a></p>
+        </address>
+      </div>
+      <div>
+        <h2 class="font-display text-base font-semibold uppercase tracking-[0.14em] text-amarillo">Horario</h2>
+        <p class="mt-4">Lunes a viernes<br>9:30–13:30 y 15:30–19:30</p>
+        <p class="mt-1 text-white/70">Sábado y domingo: cerrado</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="contenedor flex flex-col gap-3 px-4 py-6 text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <p>© <span data-year>2026</span> Talleres Mecánicos Martelo</p>
+        <ul class="flex gap-5">
+          <li><a href="aviso-legal.html" class="hover:text-white hover:underline">Aviso legal</a></li>
+          <li><a href="privacidad.html" class="hover:text-white hover:underline">Política de privacidad</a></li>
+        </ul>
+      </div>
+      <p class="demo-only px-4 pb-6 text-center text-xs text-white/60">Demo: diseño y logotipo son una propuesta y no constituyen la web oficial del taller.</p>
+    </div>
+  </footer>
+
+  <!-- ============ BARRA INFERIOR FIJA (solo móvil) ============ -->
+  <nav class="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-linea bg-white/95 p-2 backdrop-blur md:hidden" aria-label="Acciones rápidas">
+    <a href="tel:+34981236598" class="btn-cta min-h-[52px]">
+      <svg class="icono h-5 w-5" aria-hidden="true"><use href="#i-phone"/></svg> Llamar
+    </a>
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Talleres+Mec%C3%A1nicos+Martelo%2C+R%C3%BAa+San+Rosendo+27%2C+15007+A+Coru%C3%B1a" target="_blank" rel="noopener" class="btn min-h-[52px] bg-azul text-white hover:bg-azul-700">
+      <svg class="icono h-5 w-5" aria-hidden="true"><use href="#i-nav"/></svg> Cómo llegar
+    </a>
+  </nav>
+</body>
+</html>
